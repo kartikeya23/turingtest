@@ -8,7 +8,7 @@ def login(request):
 		if user is not None:
 			auth.login(request, user)
 			print("user logged in: ", user.username)
-			return redirect('home')
+			return redirect('dashboard')
 		else:
 			print('unknown user')
 			return render(request, 'accounts/login.html', {'error': 'User not found'})
