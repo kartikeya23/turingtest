@@ -12,6 +12,21 @@
   <a class="navbar-brand" href="{% url 'level' %}">Turing Test</a>
 </nav>
 <br><br><br>
-    <h1 style="margin-left:50px;">Welcome {{user.school.school_name}}</h1>
+<div class="container">
+
+
+<form method="POST" action="{% url 'level' %}">
+{% csrf_token %}
+<!-- <div class="form-group">
+<label for="formGroupExampleInput2">Current level</label>
+<input type="text" class="form-control" id="formGroupExampleInput2" name="answer" placeholder="Another input">
+</div> -->
+<div class="form-label-group">
+  <input id="usernames" type="text" name="answer" class="form-control" placeholder="Enter Answer" required > <br>
+</div>
+<button type="submit" name="button">Submit</button>
+</form>
+
+</div>
   </body>
 </html>
