@@ -22,7 +22,7 @@ from dashboard import views as dv
 
 urlpatterns = [
 		path('admin/', admin.site.urls),
-		path('', acv.login, name='home'),
+		path('', dv.home, name='home'),
 		path('accounts/', include('accounts.urls')),
 		path('leaderboard/', dv.leaderboard, name='leaderboard'),
 		path('play/', dv.level, name='play')
