@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'turingdb',
-        'USER': 'turingf',
-        'PASSWORD': 'samshi52',
+        'USER': 'turingf-admin',
+        'PASSWORD': 'turingf#42',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -133,6 +133,8 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'turingtest/static/')
 ]
+
+LOGIN_URL = '/accounts/login'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'

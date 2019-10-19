@@ -7,11 +7,14 @@
   </head>
   <body>
     <nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'dashboard' %}">Dashboard</a>
-  <a class="navbar-brand" href="{% url 'leaderboard' %}">Leaderboard</a>
-  <a class="navbar-brand" href="{% url 'level' %}">Turing Test</a>
-</nav>
-<br><br><br>
-    <!-- <h1 style="margin-left:50px;">Welcome {{user.school.school_name}}</h1> -->
+      <a class="navbar-brand" href="{% url 'leaderboard' %}">Leaderboard</a>
+      <a class="navbar-brand" href="{% url 'play' %}">Turing Test</a>
+    </nav>
+    <br><br><br>
+    {% for school in standings %}
+      <h1>{{ school.display_name }}       {{ school.level }}</h1>
+      <h2></h2>
+      <br><br>
+    {% endfor %}
   </body>
 </html>

@@ -7,26 +7,19 @@
   </head>
   <body>
     <nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'dashboard' %}">Dashboard</a>
-  <a class="navbar-brand" href="{% url 'leaderboard' %}">Leaderboard</a>
-  <a class="navbar-brand" href="{% url 'level' %}">Turing Test</a>
-</nav>
-<br><br><br>
-<div class="container">
-
-
-<form method="POST" action="{% url 'level' %}">
-{% csrf_token %}
-<!-- <div class="form-group">
-<label for="formGroupExampleInput2">Current level</label>
-<input type="text" class="form-control" id="formGroupExampleInput2" name="answer" placeholder="Another input">
-</div> -->
-<div class="form-label-group">
-  <input id="usernames" type="text" name="answer" class="form-control" placeholder="Enter Answer" required > <br>
-</div>
-<button type="submit" name="button">Submit</button>
-</form>
-
-</div>
+      <a class="navbar-brand" href="{% url 'leaderboard' %}">Leaderboard</a>
+      <a class="navbar-brand" href="{% url 'play' %}">Turing Test</a>
+    </nav>
+    <br><br><br>
+    <div class="container">
+      <h1 class="">{{ question }}</h1>
+      <form method="POST" action="{% url 'play' %}">
+        {% csrf_token %}
+        <div class="form-label-group">
+          <input id="usernames" type="text" name="answer" class="form-control" placeholder="Enter Answer" required > <br>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit" name="button">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
