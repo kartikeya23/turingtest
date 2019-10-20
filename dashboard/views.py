@@ -20,7 +20,7 @@ def level(request):
 	school = request.user.school
 	if school.level >= 2:
 		return render(request, 'dashboard/finished.html')
-	currlvl = Level.objects.filter(number=school.level)[0]
+	currlvl = Level.objects.get(number=school.level)
 	print(currlvl)
 	if request.method == "POST":
 		response = request.POST['answer'].strip().lower()

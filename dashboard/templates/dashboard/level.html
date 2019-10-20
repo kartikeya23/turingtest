@@ -9,6 +9,10 @@
     <nav class="navbar fixed-top navbar-light bg-light">
       <a class="navbar-brand" href="{% url 'leaderboard' %}">Leaderboard</a>
       <a class="navbar-brand" href="{% url 'play' %}">Turing Test</a>
+      <form id="log" action="{% url 'logout' %}" method="POST" >
+            {% csrf_token %}
+            <a class="navbar-brand" href="javascript:{document.getElementById('log').submit()}">Logout</a>
+          </form>
     </nav>
     <br><br><br>
     <div class="container">
