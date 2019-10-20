@@ -8,12 +8,9 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def home(request):
-	try:
-		school = request.user.school
-		return redirect('dashboard')
-	except:
-		return redirect('accounts/login')
+	return redirect(request, 'play')
 
 def dashboard(request):
 	return render(request,'dashboard/dashboard.html')
