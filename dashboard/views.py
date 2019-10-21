@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def home(request):
-	return redirect(request, 'play')
+	return redirect('play')
 
 def dashboard(request):
 	return render(request,'dashboard/dashboard.html')
