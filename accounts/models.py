@@ -8,3 +8,6 @@ class School(models.Model):
 	level = models.IntegerField(default=0)
 	login = models.OneToOneField(User, on_delete=models.CASCADE)
 	time = models.DateTimeField(default=timezone.now)
+
+	def __str__(self):
+		return self.display_name
