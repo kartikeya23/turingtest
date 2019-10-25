@@ -6,25 +6,20 @@ from django.core import serializers
 from .models import Level
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
-
 @login_required
 def home(request):
 	return redirect('play')
 
-def dashboard(request):
-	return render(request,'dashboard/dashboard.html')
-
 @login_required
-def level(request):
+def play(request):
 	school = request.user.school
 	if school.level >= 2:
 		return render(request, 'dashboard/finished.html')
 	currlvl = Level.objects.get(number=school.level)
 	print(currlvl)
 	if request.method == "POST":
-		response = request.POST['answer'].strip().lower()
-		print(response)
+		response = request.POST['answer'].lower()
+		print(f"{school.display_name} answered {response} for level {school.level}")
 		if response == currlvl.answer:
 			school.level += 1
 			school.time = timezone.now()

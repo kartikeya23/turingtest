@@ -25,5 +25,5 @@ urlpatterns = [
 		path('', dv.home, name='home'),
 		path('accounts/', include('accounts.urls')),
 		path('leaderboard/', dv.leaderboard, name='leaderboard'),
-		path('play/', dv.level, name='play')
+		path('play/', dv.play, name='play')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
