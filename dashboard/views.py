@@ -31,7 +31,7 @@ def level(request):
 			print(f"{school.school_name} is now on level {school.level} at {timezone.now()}")
 			school.save()
 		return redirect('play')
-	return render(request,'dashboard/level.html', {'question': currlvl.question})
+	return render(request,'dashboard/level.html', {'question': currlvl.question, 'number': currlvl.number})
 
 def leaderboard(request):
 	all_users = School.objects.order_by('-level', 'time')

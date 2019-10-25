@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-light bg-light">
-      <a class="navbar-brand" href="{% url 'leaderboard' %}">Leaderboard</a>
-      <a class="navbar-brand" href="{% url 'play' %}">Turing Test</a>
-      <form id="log" action="{% url 'logout' %}" method="POST" >
-            {% csrf_token %}
-            <a class="navbar-brand" href="javascript:{document.getElementById('log').submit()}">Logout</a>
-          </form>
-    </nav>
-    <br><br><br>
-    <div class="container">
-      <h1 class="">{{ question }}</h1>
-      <form method="POST" action="{% url 'play' %}">
-        {% csrf_token %}
-        <div class="form-label-group">
-          <input id="usernames" type="text" name="answer" class="form-control" placeholder="Enter Answer" required > <br>
-        </div>
-        <button class="btn btn-lg btn-primary" type="submit" name="button">Submit</button>
-      </form>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+  <div class="box">
+    <h2 class='question'>TuringTest@TuringF $lvl{{ number }}</h2>
+    <h2 class='question'> {{ question }} </h2>
+    <form method="POST" action="{% url 'play' %}">
+      {% csrf_token %}
+      <input type="text" name="answer" id="answer" maxlength="20" autocomplete="off" placeholder=">" onkeypress="return AvoidSpace(event)">
+      <br>
+      <button class="btn btn-lg btn-primary" id="go">python3 answer.py</button>
+    </form>
+  </div>
+{% endblock content %}

@@ -11,7 +11,7 @@ def login(request):
 			return redirect('play')
 		else:
 			print('unknown user')
-			return render(request, 'accounts/login.html', {'error': 'User not found'})
+			return render(request, 'accounts/login.html', {'error': 'user not found'})
 	else:
 		return render(request, 'accounts/login.html')
 

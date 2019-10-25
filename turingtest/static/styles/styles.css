@@ -1,0 +1,67 @@
+
+*{
+  font-family: 'VT323', monospace!important;
+  color:#00ff41!important;
+}
+
+body{
+  background: black;
+  margin: 0;
+  text-align: center;
+  padding: 30px;
+}
+
+.loginBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+}
+.loginBox{
+  text-align: left;
+}
+#usernamePrompt{
+  font-size: 22px;
+  display: inline-block;
+}
+#pswdPrompt{
+  font-size: 22px;
+  display: inline-block;
+}
+
+#username{
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  float:right;
+  font-size: 22px;
+}
+#pswd{
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 22px;
+}
+
+#login{
+  font-size: 22px;
+  background: transparent;
+  border: 3px dashed;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+#login:focus{
+  outline: none;
+}
+#username:focus{
+  border:none;
+}
+#pswd:focus{
+  border:none;
+}

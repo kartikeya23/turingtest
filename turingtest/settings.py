@@ -56,7 +56,7 @@ ROOT_URLCONF = 'turingtest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['turingtest/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
