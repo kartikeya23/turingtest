@@ -16,7 +16,6 @@ def play(request):
 	if school.level >= 2:
 		return render(request, 'dashboard/finished.html')
 	currlvl = Level.objects.get(number=school.level)
-	print(currlvl)
 	if request.method == "POST":
 		response = request.POST['answer'].lower()
 		print(f"{school.display_name} answered {response} for level {school.level}")
