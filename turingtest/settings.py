@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'turingtest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'turingdb',
-        'USER': 'turingf-admin',
+        'NAME': 'turinfdb',
+        'USER': 'kartikeyasingh',
         'PASSWORD': 'turingf#42',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
